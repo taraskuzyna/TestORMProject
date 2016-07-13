@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EFProject", "EFProject\EFProject.csproj", "{F45E416C-3592-493D-8BC8-5AFCC18F9551}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NHibernateProject", "NHibernateProject\NHibernateProject.csproj", "{7723646B-2C3B-453F-AF48-050DF2ACF6B7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleDataProject", "SimpleDataProject\SimpleDataProject.csproj", "{54542443-13FA-4B14-B49B-25172F89062D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F45E416C-3592-493D-8BC8-5AFCC18F9551}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F45E416C-3592-493D-8BC8-5AFCC18F9551}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F45E416C-3592-493D-8BC8-5AFCC18F9551}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F45E416C-3592-493D-8BC8-5AFCC18F9551}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7723646B-2C3B-453F-AF48-050DF2ACF6B7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7723646B-2C3B-453F-AF48-050DF2ACF6B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7723646B-2C3B-453F-AF48-050DF2ACF6B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7723646B-2C3B-453F-AF48-050DF2ACF6B7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{54542443-13FA-4B14-B49B-25172F89062D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{54542443-13FA-4B14-B49B-25172F89062D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{54542443-13FA-4B14-B49B-25172F89062D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{54542443-13FA-4B14-B49B-25172F89062D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

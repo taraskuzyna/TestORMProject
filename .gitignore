@@ -1,0 +1,8 @@
+packages/
+NHibernateProject/obj
+NHibernateProject/bin
+EFProject/obj/
+EFProject/bin/
+SimpleDataProject/bin/
+SimpleDataProject/obj/
+TestORMProject.v12.suo
