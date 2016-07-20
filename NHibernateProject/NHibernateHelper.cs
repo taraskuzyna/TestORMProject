@@ -29,24 +29,17 @@ namespace NHibernateProject
         static void BuildSessionFactory()
         {
             string connectionString = ConfigurationManager.ConnectionStrings["fb1"].ConnectionString;
-           
+
             FirebirdConfiguration cfg = new FirebirdConfiguration()
-                .ConnectionString(connectionString)
-                .AdoNetBatchSize(100);
+                .ConnectionString(connectionString);
 
             _sessionFactory = Fluently.Configure()
                 .Database(cfg)
                 .Mappings(m => m.FluentMappings.Add(typeof(PersonMap)))
                 .Mappings(m => m.FluentMappings.Add(typeof(AddressMap)))
-                //.ExposeConfiguration(BuildSchema)
                 .BuildConfiguration()
                 .BuildSessionFactory();
         }
-
-        //static void BuildSchema(Configuration cfg)
-        //{
-        //    new SchemaExport(cfg).Create(false, true);
-        //}
 
         public static ISession OpenSession()
         {

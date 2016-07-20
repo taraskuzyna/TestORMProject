@@ -21,7 +21,7 @@ namespace SimpleDataProject
 
         public int? AddressId { get; set; }
 
-        public virtual Address Address { get; set; }
+        public virtual Addresses Addresses { get; set; }
     }
 
     public enum Gender

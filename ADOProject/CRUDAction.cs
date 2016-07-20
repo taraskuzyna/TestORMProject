@@ -1,50 +1,58 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data.Entity;
+﻿using EverestORM;
+using System;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Collections.Generic;
 
-namespace EFProject
+namespace ADOProject
 {
     public class CRUDAction
     {
-        private MyDbContext db;
+        private IContext context;
 
         public CRUDAction()
         {
-            db = new MyDbContext();
+            context = new FbContext("fb1");
         }
 
         public void Create()
         {
-            db.Persons.AddRange(GenerateListOfPersons());
-            db.SaveChanges();
+            var list = GenerateListOfPersons();
+            foreach (var item in list)
+            {
+                int id = context.Insert(item.Address);
+                item.AddressId = id;
+                context.Insert(item);
+            }
         }
 
         public void Read()
         {
-            List<Person> list = db.Persons.Include("Address").ToList();
+            List<Address> list = context.Select<Address>().ToList();
+            List<Person> list1 = context.Select<Person>().ToList();
+            foreach (var item in list1)
+                item.Address = list.Where(c => c.Id == item.AddressId).FirstOrDefault();
+
         }
 
         public void Update()
         {
-            List<Person> list = db.Persons.ToList();
-            foreach (Person item in db.Persons)
+            List<Person> list = context.Select<Person>().ToList();
+            foreach (Person item in list)
             {
                 item.Email += ".pl";
-                db.Entry(item).State = System.Data.Entity.EntityState.Modified;
+                context.Update(item);
             }
-            db.SaveChanges();
         }
 
         public void Delete()
         {
-            List<Person> list = db.Persons.ToList();
-            db.Persons.RemoveRange(list);
-            List<Address> list1 = db.Addresses.ToList();
-            db.Addresses.RemoveRange(list1);
-            db.SaveChanges();
+            List<Person> list = context.Select<Person>().ToList();
+            foreach( Person item in list)
+                context.Delete<Person>(item.Id);
+            
+            List<Address> list1 = context.Select<Address>().ToList();
+            foreach (Address item in list1)
+                context.Delete<Person>(item.Id);
         }
 
         List<Person> GenerateListOfPersons()
@@ -54,16 +62,16 @@ namespace EFProject
             {
                 persons.Add(new Person()
                 {
-                    
+
                     FirstName = "Jan" + i.ToString(),
                     LastName = "Kowalski" + i.ToString(),
                     DateOfBirth = DateTime.Now.AddHours(i),
                     Email = "test" + i.ToString() + "@test.com",
-                    Gender = i % 2 == 1 ? Gender.Male : Gender.Female,
+                    Gender = i % 2 == 1 ? (int)Gender.Male : (int)Gender.Female,
                     Telephone = (2 * i).ToString(),
                     Address = new Address()
                     {
-                        
+
                         City = "Wroclaw" + i.ToString(),
                         Region = "Dolnoslaskie" + i.ToString(),
                         Street = "Pilsuckiego" + i.ToString(),

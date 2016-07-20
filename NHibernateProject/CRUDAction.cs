@@ -15,7 +15,8 @@ namespace NHibernateProject
             {
                 using (ITransaction transaction = session.BeginTransaction())
                 {
-                    foreach (Person item in GenerateListOfPersons())
+                    var list = GenerateListOfPersons();
+                    foreach (Person item in list)
                         session.Save(item);
 
                     transaction.Commit();
@@ -41,7 +42,7 @@ namespace NHibernateProject
                     foreach (Person item in list)
                     {
                         item.Email += ".pl";
-                        session.SaveOrUpdate(item);
+                        session.Update(item);
                     }
                     transaction.Commit();
                 }
@@ -67,7 +68,7 @@ namespace NHibernateProject
         List<Person> GenerateListOfPersons()
         {
             List<Person> persons = new List<Person>();
-            for (int i = 0; i < 100; i++)
+            for (int i = 0; i < 1000; i++)
             {
                 persons.Add(new Person()
                 {

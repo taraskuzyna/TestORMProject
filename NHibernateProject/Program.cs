@@ -17,6 +17,7 @@ namespace NHibernateProject
         {
             try
             {
+                Console.WriteLine("nHibernate");
                 crud = new CRUDAction();
 
                 begin = DateTime.Now;

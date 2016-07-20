@@ -8,6 +8,7 @@ namespace EFProject
             : base("fb1")
         {
             Database.SetInitializer<MyDbContext>(null);
+            this.Configuration.LazyLoadingEnabled = false;
         }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)

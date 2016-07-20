@@ -1,7 +1,7 @@
 ﻿
 namespace SimpleDataProject
 {
-    public class Address
+    public class Addresses
     {
         public int? Id { get; set; }
 

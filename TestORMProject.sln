@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NHibernateProject", "NHiber
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleDataProject", "SimpleDataProject\SimpleDataProject.csproj", "{54542443-13FA-4B14-B49B-25172F89062D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ADOProject", "ADOProject\ADOProject.csproj", "{00486D34-612B-4E73-AD7B-21A32C0E9BAF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{54542443-13FA-4B14-B49B-25172F89062D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{54542443-13FA-4B14-B49B-25172F89062D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{54542443-13FA-4B14-B49B-25172F89062D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{00486D34-612B-4E73-AD7B-21A32C0E9BAF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{00486D34-612B-4E73-AD7B-21A32C0E9BAF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{00486D34-612B-4E73-AD7B-21A32C0E9BAF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{00486D34-612B-4E73-AD7B-21A32C0E9BAF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace EFProject
+namespace ADOProject
 {
     class Program
     {
@@ -17,7 +17,7 @@ namespace EFProject
         {
             try
             {
-                Console.WriteLine("Entity Framework 6");
+                Console.WriteLine("ADO .NET");
                 crud = new CRUDAction();
 
                 begin = DateTime.Now;

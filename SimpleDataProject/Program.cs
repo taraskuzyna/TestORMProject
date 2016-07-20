@@ -17,6 +17,7 @@ namespace SimpleDataProject
         {
             try
             {
+                Console.WriteLine("Simple Date");
                 crud = new CRUDAction();
 
                 begin = DateTime.Now;

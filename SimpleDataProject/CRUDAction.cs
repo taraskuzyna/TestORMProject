@@ -20,7 +20,7 @@ namespace SimpleDataProject
         {
             foreach (Person item in GenerateListOfPersons())
             {
-                var p = db.Addresses.Insert(item.Address);
+                var p = db.Addresses.Insert(item.Addresses);
                 item.AddressId = p.Id;
                 db.People.Insert(item);
             }
@@ -28,23 +28,26 @@ namespace SimpleDataProject
 
         public void Read()
         {
-            List<Person> list = db.People.All();
+            List<Person> list = db.People.All().WithAddresses();
         }
 
         public void Update()
         {
-            db.People.UpdateAll(Email: "Steve");
+            List<Person> list = db.People.All();
+            foreach (var item in list)
+                db.People.UpdateById(Id: item.Id, Email: item.Email + ".pl");
         }
 
         public void Delete()
         {
             db.People.DeleteAll();
+            db.Addresses.DeleteAll();
         }
 
         List<Person> GenerateListOfPersons()
         {
             List<Person> persons = new List<Person>();
-            for (int i = 0; i < 100; i++)
+            for (int i = 0; i < 1000; i++)
             {
                 persons.Add(new Person()
                 {
@@ -54,7 +57,7 @@ namespace SimpleDataProject
                     Email = "test" + i.ToString() + "@test.com",
                     Gender = i % 2 == 1 ? Gender.Male : Gender.Female,
                     Telephone = (2 * i).ToString(),
-                    Address = new Address()
+                    Addresses = new Addresses()
                     {
                         City = "Wroclaw" + i.ToString(),
                         Region = "Dolnoslaskie" + i.ToString(),
